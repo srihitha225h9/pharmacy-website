@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Tracking - Pharmacy</title>
+    <link rel="stylesheet" href="tracking.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Order Tracking</h1>
+    </header>
+    <div class="container">
+        <form id="orderForm">
+            <label for="orderID">Order ID:</label>
+            <input type="text" id="orderID" name="orderID" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <button type="submit">Track Order</button>
+            <button onclick="window.location.href='medicine.html'">Refer Again</button>
+        </form>
+        <div id="orderStatus">
+            <!-- Order status will be displayed here -->
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Pharmacy. All rights reserved.</p>
+    </footer>
+    <img src="https://sanfe.in/cdn/shop/files/Track-your-order.jpg?v=1614253167&width=1600" alt="Description of image" /> <!-- Add your image here -->
+    <script src="tracking.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>

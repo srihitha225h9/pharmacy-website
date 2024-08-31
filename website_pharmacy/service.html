@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Content Page</title>
+    <link rel="stylesheet" type="text/css" href="service.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuZq4Crjs87V9ly-wsZGEZAPWzr5J70R3d4Q&s" alt="Logo">
+        </a>
+        <nav class="headbar">
+            <a href="index.html">HOME</a>
+            <a href="login.html">LOGIN</a>
+            <a href="doc.html">DOCTORS</a>
+            <a href="medicine.html">MEDICINES</a>
+            <a href="service.html">SERVICES</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+        <div class="menubtn">
+            <button onclick="window.location.href='helpline.html'">Helpline</button>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="about">
+                <h3>ABOUT US</h3>
+                <p>"<span>Medicure</span>". It is the online deals site of medications supported by a US pharmacy, situated at the edge of central park and downtown in the 6th district of the United States. 
+                    "<span>Medicure</span>" pharmacy is open Monday to Friday from 8.30 to 20:00 and Saturday from 9:00 to 20:00. 
+                    "<span>Medicure</span>", the pioneer in pharmacy and US pharmacy offers a worldwide selection of pharmacy items, natural drugs, fragrant healing, and medications (homeopathy, veterinary items, medicines, and over-the-counter prescriptions) at the best prices.
+                </p>
+                <p class="more-info" id="more-info">
+                    We strive to provide the best service and products to our customers. Our team of experts is always ready to assist you with your needs and ensure you receive the best care possible. Thank you for choosing Medicure.
+                </p>
+                <a href="#" class="btn" id="readMoreBtn">Read More</a>
+                <div class="about-form">
+                    <img src="https://img.freepik.com/premium-photo/cute-cartoon-3d-girl-ware-doctor-cloth-friendly-female-doctor-illustration_862994-65196.jpg" alt="Pharmacy Image">
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const readMoreBtn = document.getElementById('readMoreBtn');
+        const moreInfo = document.getElementById('more-info');
+
+        readMoreBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            if (moreInfo.style.display === 'none' || moreInfo.style.display === '') {
+                moreInfo.style.display = 'block';
+                readMoreBtn.textContent = 'Read Less';
+            } else {
+                moreInfo.style.display = 'none';
+                readMoreBtn.textContent = 'Read More';
+            }
+        });
+    </script>
+</body>
+</html>

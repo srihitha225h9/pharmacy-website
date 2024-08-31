@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuZq4Crjs87V9ly-wsZGEZAPWzr5J70R3d4Q&s" alt="Logo">
+        </a>
+        <nav class="headbar">
+            <a href="index.html">HOME</a>
+            <a href="login.html">LOGIN</a>
+            <a href="doc.html">DOCTORS</a>
+            <a href="medicine.html">MEDICINE</a>
+            <a href="service.html">SERVICE</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+        <div class="menubtn">
+            <button onclick="window.location.href='helpline.html'">Helpline</button>
+        </div>
+    </header>
+    <div class="container" id="container">
+        <div class="form sign-up-container">
+            <form id="signUpForm">
+                <h1>Create An Account</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fa fa-facebook-official" ></i></a>
+                    <a href="#" class="social"><i class="fa fa-google-plus" ></i></a>
+                    <a href="#" class="social"><i class="fa fa-linkedin" ></i></a>
+                </div>
+                <span>or use your email for registration</span>
+                <div class="input-field">
+                    <i class="fa fa-user"></i>
+                    <input type="text" placeholder="Username" id="username" required>
+                </div>
+                <div class="input-field">
+                    <i class="fa fa-envelope"></i>
+                    <input type="email" placeholder="Email" id="email" required>
+                </div>
+                <div class="input-field">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" placeholder="Password" id="signUpPassword" required>
+                </div>
+                <div class="error-message" id="signUpErrorMessage"></div>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        <div class="form sign-in-container">
+            <form id="signInForm" action="doc.html">
+                <h1>Login</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="social"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                    <a href="#" class="social"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                </div>
+                <span>or use your account</span>
+                <div class="input-field">
+                    <i class="fa fa-user"></i>
+                    <input type="text" placeholder="Username" required>
+                </div>
+                <div class="input-field">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" placeholder="Password" id="signInPassword" required>
+                </div>
+                <div class="error-message" id="signInErrorMessage"></div>
+                <a href="#">Forgot your Password</a>
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <img src="https://bdigitally.com/wp-content/uploads/2021/05/pharma-intro.png" style="height:25rem; width:30rem; padding-top:55%;">
+                    <button class="btn" id="signIn">Sign in</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello User!</h1>
+                    <p>Enter your personal details and start your journey with us</p>
+                    <img src="https://thumbs.dreamstime.com/b/pharmacy-building-isolated-white-background-d-illustration-150691554.jpg" style="height:25rem; width:30rem;">
+                    <button class="btn" id="signUp">Sign up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const container = document.getElementById('container');
+
+        signUpButton.addEventListener('click', () => {
+            container.classList.add("right-panel-active");
+        });
+
+        signInButton.addEventListener('click', () => {
+            container.classList.remove("right-panel-active");
+        });
+
+        const signUpForm = document.getElementById('signUpForm');
+        const signUpPasswordInput = document.getElementById('signUpPassword');
+        const signUpErrorMessage = document.getElementById('signUpErrorMessage');
+
+        const signInForm = document.getElementById('signInForm');
+        const signInPasswordInput = document.getElementById('signInPassword');
+        const signInErrorMessage = document.getElementById('signInErrorMessage');
+
+        const validatePassword = (password) => {
+            const specialCharacterPattern = /[!@#$%^&*(),.?":{}|<>]/;
+            return password.length >= 8 && specialCharacterPattern.test(password);
+        };
+
+        signUpForm.addEventListener('submit', function(event) {
+            const password = signUpPasswordInput.value;
+            if (!validatePassword(password)) {
+                signUpErrorMessage.textContent = 'Password must be at least 8 characters long and contain at least one special character.';
+                event.preventDefault();
+            } else {
+                signUpErrorMessage.textContent = '';
+            }
+        });
+
+        signInForm.addEventListener('submit', function(event) {
+            const password = signInPasswordInput.value;
+            if (!validatePassword(password)) {
+                signInErrorMessage.textContent = 'Password must be at least 8 characters long and contain at least one special character.';
+                event.preventDefault();
+            } else {
+                signInErrorMessage.textContent = '';
+            }
+        });
+    </script>
+</body>
+</html>
